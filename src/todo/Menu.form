@@ -76,7 +76,7 @@
                   <Component id="addNoteButton" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="peekNotesButton" min="-2" pref="45" max="-2" attributes="0"/>
-                  <EmptySpace pref="297" max="32767" attributes="0"/>
+                  <EmptySpace pref="175" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -85,7 +85,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Mongolian Baiti" size="24" style="1"/>
+              <Font name="Microsoft Sans Serif" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="To-do list"/>
           </Properties>
