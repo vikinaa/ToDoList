@@ -4,7 +4,7 @@
  */
 package todo;
 
-import javax.swing.JLabel;
+
 import javax.swing.JOptionPane;
 
 
@@ -16,9 +16,18 @@ import javax.swing.JOptionPane;
 public class AddNote extends javax.swing.JFrame {
 
     
-    Hashmap myMap=new Hashmap();
-    private int key=1;
+    static Hashmap myMap=new Hashmap();
+    static private int key=1;
     private int importance=0;
+    
+    public void setKey(int key){
+        this.key=key;
+    }
+    
+    public int getKey (){
+        return key;
+    }
+    
     
     public AddNote() {
         initComponents();
@@ -28,14 +37,7 @@ public class AddNote extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    /*public void check(){
-        String text=dateText.getText();
-        boolean match=text.matches(""); 
-        if(match==true){
-            
-        }
-        else JOptionPane.showMessageDialog(null,"","Error",JOptionPane.ERROR_MESSAGE);
-    } */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -258,7 +260,7 @@ public class AddNote extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Back1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Back1ActionPerformed
-        this.dispose();
+        this.setVisible(false);
         new Menu().setVisible(true);
     }//GEN-LAST:event_Back1ActionPerformed
 
@@ -268,8 +270,13 @@ public class AddNote extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if (title.getText().isEmpty()==false&&importance!=0){
-            Node newNote=new Node(key++, title.getText(), false, importance);                                          
-            myMap.put(newNote);
+            Node newNote=new Node(getKey(), title.getText(), false, importance);                                          
+            myMap.put(newNote); 
+            this.setVisible(false);
+            new Menu().setVisible(true);
+            key++;
+            setKey(key);
+           
         }
         else {
             if(title.getText().isEmpty()) titleS.setVisible(true);
