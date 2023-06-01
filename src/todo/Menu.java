@@ -112,14 +112,14 @@ public class Menu extends javax.swing.JFrame {
 
     private void addNoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNoteButtonActionPerformed
         
-        this.dispose();
+        this.setVisible(false);
         new AddNote().setVisible(true);
         
         
     }//GEN-LAST:event_addNoteButtonActionPerformed
 
     private void peekNotesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekNotesButtonActionPerformed
-        this.dispose();
+        this.setVisible(false);
         new Notes().setVisible(true);
     }//GEN-LAST:event_peekNotesButtonActionPerformed
 
