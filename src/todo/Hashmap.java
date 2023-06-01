@@ -5,12 +5,13 @@
 package todo;
 
 
-public class Hashmap {
+public class Hashmap implements Sorts{
     
     
-    Node head = new Node(0, null, false, 0); 
+     
+     Node head = new Node(); 
 
-    public int size() {
+    public int size() {  //raboti
         if (head.next == null) {
             return 0;
         } else {
@@ -25,7 +26,7 @@ public class Hashmap {
         }
     }
 
-    public boolean different(Node kl) {
+    public boolean different(Node kl) { 
         if (kl != head.next) {
             Node check = head.next;
             while (check!= null) {
@@ -66,27 +67,59 @@ public class Hashmap {
       
 
     } 
+    
+    public void clear(){  //raboti
+        head.next=null;
+    }
 
-    public void cout(int key){
+    public String cout(int key){ 
+        String note="";
         Node kl=head.next;
-        while(kl.next!=null){
+        while(kl!=null){
             if(kl.getKey()==key) {
-                System.out.println(kl.getValue());
-                System.out.println("Важност: "+kl.getImp());
-                System.out.println(); //deadline
+                note+=kl.getValue();
+                note+="\n";
+                note=note+"Изпълненост: "+kl.getDone();
+                note+="\n";
+                note=note+"Важност: "+kl.getImp();
+                //System.out.println(); //deadline
             }
+            kl=kl.next;
             
         }
+        return note;
         
             }
     
-    public void sstring() {
+    public String sstring() {
+        String text="";
         Node kl = head.next;
-        while (kl.next != null) {
-            System.out.print(kl.getKey() + " - " + kl.getValue());
+        while (kl!= null) { 
+            text+="\n";
+            text+=cout(kl.getKey());
+            text+="\n";
+            text+="------------------------------------------------------------------------";
             kl = kl.next;
         }
+        return text;
 
+    }
+    
+    
+
+    @Override
+    public void sortByDate() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void sortByImp() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void sortByStatus() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
