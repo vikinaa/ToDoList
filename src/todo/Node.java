@@ -51,6 +51,7 @@ public class Node {
         return done;
     }
     
+    
     public void setKey( int key){
         this.key=key;
     }
@@ -59,6 +60,13 @@ public class Node {
         return key;
     }
     
+     Node (){
+        setValue(null);
+        setKey(0);
+        setDone(false);
+        setImp(0);
+    }
+     
     Node(int key, String value, boolean done, int imp){
         
         setValue(value);
