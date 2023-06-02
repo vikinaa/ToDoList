@@ -4,6 +4,7 @@
  */
 package todo;
 
+
 import javax.swing.JOptionPane;
 
 
@@ -17,24 +18,14 @@ public class Notes extends javax.swing.JFrame{
      * Creates new form Notes
      */
     
-    private int note;
-    
-    public void setNote(int note){
-        this.note=note;
-    }
-    
-    public int getNote(){
-        return note;
-    }
-    
+    static int note;
     
     public Notes() {
-        AddNote o=new AddNote();
         initComponents();
         this.setResizable(false);
         taskCounter.setText(String.valueOf(AddNote.myMap.size()));
         notesTextArea.setText(AddNote.myMap.sstring());
-       //notesTextArea.append(o.myMap.sstring());
+       // notesTextArea.append(o.myMap.sstring());
     }
      
     
@@ -77,6 +68,11 @@ public class Notes extends javax.swing.JFrame{
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Срок", "Изпълненост", "Важност" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
         jLabel1.setText("Сортирай по:");
@@ -123,16 +119,16 @@ public class Notes extends javax.swing.JFrame{
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3))
+                        .addGap(15, 15, 15)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(taskCounter, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
-                        .addGap(36, 36, 36))
+                        .addGap(293, 293, 293))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -162,9 +158,9 @@ public class Notes extends javax.swing.JFrame{
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addComponent(taskCounter)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(taskCounter))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))
@@ -211,20 +207,28 @@ public class Notes extends javax.swing.JFrame{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        AddNote o=new AddNote();
-        Notes a=new Notes();
+       
         if(!(noteCheck.getText()).equals("")){
-            if(Integer.valueOf(noteCheck.getText())>1 && Integer.valueOf(noteCheck.getText())<o.myMap.size()) {
+            if(Integer.parseInt(noteCheck.getText())>0 && Integer.parseInt(noteCheck.getText())<=AddNote.myMap.size()) {
             this.setVisible(false);
             new noteDesc().setVisible(true);
-            a.setNote(Integer.valueOf(noteCheck.getText()));
+            note=Integer.parseInt(noteCheck.getText());
         }
             else JOptionPane.showMessageDialog(null,"Невалиден номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
         }
-        else JOptionPane.showMessageDialog(null,"Невалиден номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
+        else JOptionPane.showMessageDialog(null,"Въведете номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
         
-        
+        System.out.println(note+ " ot notes"); 
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        if(jComboBox1.getSelectedItem()=="Изпълненост"){
+            AddNote.myMap.sortByImp();
+            notesTextArea.setText(AddNote.myMap.sstring());
+        }
+                
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
