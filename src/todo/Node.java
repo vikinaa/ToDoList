@@ -61,10 +61,8 @@ public class Node {
     }
     
      Node (){
-        setValue(null);
-        setKey(0);
-        setDone(false);
-        setImp(0);
+        this(0,"",false,0);
+       
     }
      
     Node(int key, String value, boolean done, int imp){
