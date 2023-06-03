@@ -18,7 +18,7 @@ public class Notes extends javax.swing.JFrame{
      * Creates new form Notes
      */
     
-    static int note;
+    static int note=0;
     
     public Notes() {
         initComponents();
@@ -210,23 +210,30 @@ public class Notes extends javax.swing.JFrame{
        
         if(!(noteCheck.getText()).equals("")){
             if(Integer.parseInt(noteCheck.getText())>0 && Integer.parseInt(noteCheck.getText())<=AddNote.myMap.size()) {
+            note=Integer.parseInt(noteCheck.getText());
             this.setVisible(false);
             new noteDesc().setVisible(true);
-            note=Integer.parseInt(noteCheck.getText());
+           
         }
             else JOptionPane.showMessageDialog(null,"Невалиден номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
         }
         else JOptionPane.showMessageDialog(null,"Въведете номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
-        
-        System.out.println(note+ " ot notes"); 
+     
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        if(jComboBox1.getSelectedItem()=="Изпълненост"){
+        if(jComboBox1.getSelectedItem()=="Важност"){
             AddNote.myMap.sortByImp();
             notesTextArea.setText(AddNote.myMap.sstring());
         }
+        if(jComboBox1.getSelectedItem()=="Изпълненост"){
+            
+        }
+        if(jComboBox1.getSelectedItem()=="Срок"){
+            
+        }
+
                 
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
