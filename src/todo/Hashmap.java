@@ -80,6 +80,13 @@ public class Hashmap implements Sorts{
     public void clear(){  //raboti
         head.next=null;
     }
+    
+    public String isItDone(Node a){
+        String done;
+        if(a.getDone()==true) done="Изпълнена";
+        else done="Неизпълнена";
+        return done;
+    }
 
     public String cout(int key){ 
         
@@ -90,7 +97,7 @@ public class Hashmap implements Sorts{
                 
                 note+=kl.getValue();
                 note+="\n";
-                note=note+"Изпълненост: "+kl.getDone();
+                note=note+"Изпълненост: "+isItDone(kl);
                 note+="\n";
                 note=note+"Важност: "+kl.getImp();
                 
@@ -111,7 +118,7 @@ public class Hashmap implements Sorts{
             text+="\n"+Integer.toString(br)+". ";
             text+=cout(kl.getKey());
             text+="\n";
-            text+="------------------------------------------------------------------------";
+            text+="------------------------------------------------------------------------------------------------------------------------------------------------------";
             br++;
             kl = kl.next;
         }
