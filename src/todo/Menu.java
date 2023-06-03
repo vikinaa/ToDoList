@@ -4,7 +4,7 @@
  */
 package todo;
 
-import javax.swing.JFrame;
+
 
 /**
  *
@@ -47,6 +47,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText("To-do list");
 
         addNoteButton.setBackground(new java.awt.Color(204, 204, 204));
+        addNoteButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         addNoteButton.setText("Добави бележка");
         addNoteButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         addNoteButton.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +57,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         peekNotesButton.setBackground(new java.awt.Color(204, 204, 204));
+        peekNotesButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         peekNotesButton.setText("Преглеждане на бележки");
         peekNotesButton.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         peekNotesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -85,11 +87,11 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(44, 44, 44)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(addNoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(peekNotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addGap(49, 49, 49)
+                .addComponent(addNoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(peekNotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
