@@ -1,4 +1,4 @@
-/*
+/*                  
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
@@ -11,11 +11,14 @@ package todo;
 public class Node {
     
     private int key;
-    private String value; //zaglavie
+    private String value; 
     private boolean done;
-    private String deadline; //?
+    private String deadline; 
     private int importance;
-    
+    String day;
+    String month;
+    String year;
+   
    
     public Node next;
     
@@ -28,6 +31,37 @@ public class Node {
         this.next = next;
     }
 
+      public void setDay(String day){
+        this.day=day;
+    }
+
+    public String getDay() {
+        String [] parts=deadline.split("\\.");
+        day=parts[0];
+        return day;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public String getMonth() {
+        String [] parts=deadline.split("\\.");
+        month=parts[1];
+        return month;
+    }
+    
+     public void setYear(String year) {
+        this.year = year;
+    }
+
+    public String getYear() {
+        String [] parts=deadline.split("\\.");
+        year=parts[2];
+        return year;
+    }
+    
+    
     public void setValue( String value){
         this.value=value;
     }
