@@ -4,10 +4,7 @@
  */
 package todo;
 
-
 import javax.swing.JOptionPane;
-
-
 
 /**
  *
@@ -15,21 +12,19 @@ import javax.swing.JOptionPane;
  */
 public class AddNote extends javax.swing.JFrame {
 
-    
-    static Hashmap myMap=new Hashmap();
-    static private int key=1;
-    private int importance=0;
+    static Hashmap myMap = new Hashmap();
+    static private int key = 1;
+    private int importance = 0;
     String deadline;
-    
-    public void setKey(int key){
-        this.key=key;
+
+    public void setKey(int key) {
+        this.key = key;
     }
-    
-    public int getKey (){
+
+    public int getKey() {
         return key;
     }
-    
-    
+
     public AddNote() {
         initComponents();
         buttonGroup.add(jRadioButton1);
@@ -38,7 +33,6 @@ public class AddNote extends javax.swing.JFrame {
         this.setResizable(false);
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -281,59 +275,66 @@ public class AddNote extends javax.swing.JFrame {
     }//GEN-LAST:event_Back1ActionPerformed
 
     private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
-        importance=1;
+        importance = 1;
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (title.getText().isEmpty()==false&&importance!=0&&!(deadline==null)){
-            if(year.getSelectedItem()=="2023"&&Integer.parseInt((month.getSelectedItem()).toString())<6||month.getSelectedItem()=="6"&&Integer.parseInt((day.getSelectedItem()).toString())<15&&year.getSelectedItem()=="2023"){
-                JOptionPane.showMessageDialog(null,"Задачи може да се задават само за бъдещето.","Error",JOptionPane.ERROR_MESSAGE);
-                
+        if (title.getText().isEmpty() == false && importance != 0 && !(deadline == null)&&!(deadline.equalsIgnoreCase(""))) {
+            if (year.getSelectedItem() == "2023" && Integer.parseInt((month.getSelectedItem()).toString()) < 6 ||
+                    month.getSelectedItem() == "6" && Integer.parseInt((day.getSelectedItem()).toString()) < 15 && year.getSelectedItem() == "2023") {
+                JOptionPane.showMessageDialog(null, "Задачи може да се задават само за бъдещето.", "Error", JOptionPane.ERROR_MESSAGE);
+                deadline="";
+                day.setSelectedItem("Ден");
+                month.setSelectedItem("Месец");
+                year.setSelectedItem("Година");
+               
+            } else {
+                Node newNote = new Node(getKey(), title.getText(), false, importance, deadline);
+                myMap.put(newNote);
+                this.setVisible(false);
+                new Menu().setVisible(true);
+                key++;
+                setKey(key);
             }
-            else{
-            Node newNote=new Node(getKey(), title.getText(), false, importance,deadline);                                          
-            myMap.put(newNote); 
-            this.setVisible(false);
-            new Menu().setVisible(true);
-            key++;
-            setKey(key);
+        } else {
+            if (title.getText().isEmpty()) {
+                titleS.setVisible(true);
             }
-        }
-        else {
-            if(title.getText().isEmpty()) titleS.setVisible(true);
-            if(importance==0) impS.setVisible(true);
-            
-            JOptionPane.showMessageDialog(null,"Бележката трябва да съдържа заглавие, ниво на важност и краен срок.","Error",JOptionPane.ERROR_MESSAGE);
-           
+            if (importance == 0) {
+                impS.setVisible(true);
+            }
+
+            JOptionPane.showMessageDialog(null, "Бележката трябва да съдържа заглавие, ниво на важност и краен срок.", "Error", JOptionPane.ERROR_MESSAGE);
+
         }
         titleS.setVisible(false);
         impS.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-      importance=2;
+        importance = 2;
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
-       importance=3;
+        importance = 3;
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void dayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayActionPerformed
         // TODO add your handling code here:
-       deadline=day.getItemAt(day.getSelectedIndex());
-       deadline+=".";
-       
+        deadline = day.getItemAt(day.getSelectedIndex());
+        deadline += ".";
+
     }//GEN-LAST:event_dayActionPerformed
 
     private void monthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthActionPerformed
         // TODO add your handling code here:
-        deadline+=month.getItemAt(month.getSelectedIndex());
-        deadline+=".";
+        deadline += month.getItemAt(month.getSelectedIndex());
+        deadline += ".";
     }//GEN-LAST:event_monthActionPerformed
 
     private void yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearActionPerformed
         // TODO add your handling code here:
-        deadline+=year.getItemAt(year.getSelectedIndex());
+        deadline += year.getItemAt(year.getSelectedIndex());
     }//GEN-LAST:event_yearActionPerformed
 
     /**
@@ -365,7 +366,7 @@ public class AddNote extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            
+
             public void run() {
                 new AddNote().setVisible(true);
             }
