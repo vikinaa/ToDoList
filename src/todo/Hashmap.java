@@ -100,7 +100,8 @@ public class Hashmap implements Sorts{
                 note=note+"Изпълненост: "+isItDone(kl);
                 note+="\n";
                 note=note+"Важност: "+kl.getImp();
-                
+                note+="\n";
+                note+="Срок: "+kl.getDeadline();
                 //System.out.println(); //deadline
             }
             kl=kl.next;
@@ -109,6 +110,22 @@ public class Hashmap implements Sorts{
         return note;
         
             }
+    
+     public void deleteNode(int key){
+        Node pr=head.next;
+        Node kl=pr.next;
+        if((head.next).getKey()==key){
+            head.next=head.next.next;
+        }
+        
+        while(kl!=null){
+            if(kl.getKey()==key){
+                pr.next=kl.next;
+            }
+            pr=pr.next;
+            kl=kl.next;
+        }
+    } 
     
     public String sstring() {
         String text="";
@@ -144,6 +161,10 @@ public class Hashmap implements Sorts{
         String temp8=b.getValue();
         a.setValue(temp8);
         b.setValue(temp7);
+        String temp9=a.getDeadline();
+        String temp10=b.getDeadline();
+        a.setDeadline(temp10);
+        b.setDeadline(temp9);
    
     }
     
