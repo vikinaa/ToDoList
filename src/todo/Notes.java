@@ -181,6 +181,10 @@ public class Notes extends javax.swing.JFrame {
         }
         if (jComboBox1.getSelectedItem() == "Изпълненост") {
 
+             notesTextArea.setText(AddNote.myMap.filterDone(AddNote.myMap.returnNode(1),"",1));
+            
+            
+            
         }
 
 
