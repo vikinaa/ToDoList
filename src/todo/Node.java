@@ -13,11 +13,12 @@ public class Node {
     private int key;
     private String value; //zaglavie
     private boolean done;
-    private int deadline; //?
+    private String deadline; //?
     private int importance;
     
    
     public Node next;
+    
     
      public Node getNext() {
         return next;
@@ -51,6 +52,14 @@ public class Node {
         return done;
     }
     
+    public void setDeadline(String deadline){
+        this.deadline=deadline;
+    }
+    
+    public String getDeadline(){
+        return deadline;
+    }
+    
     
     public void setKey( int key){
         this.key=key;
@@ -61,16 +70,17 @@ public class Node {
     }
     
      Node (){
-        this(0,"",false,0);
+        this(0,"",false,0, "");
        
     }
      
-    Node(int key, String value, boolean done, int imp){
+    Node(int key, String value, boolean done, int imp, String deadline){
         
         setValue(value);
         setKey(key);
         setDone(done);
         setImp(imp);
+        setDeadline(deadline);
         
     }
     
