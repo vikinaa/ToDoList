@@ -16,6 +16,9 @@ public class AddNote extends javax.swing.JFrame {
     static private int key = 1;
     private int importance = 0;
     String deadline;
+    String dayCh;
+    String monthCh;
+    String yearCh;
 
     public void setKey(int key) {
         this.key = key;
@@ -83,7 +86,7 @@ public class AddNote extends javax.swing.JFrame {
         jLabel3.setText("Заглавие:");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel4.setText("Статус:                 неизпълнена");
+        jLabel4.setText("Статус:                            неизпълнена");
 
         jRadioButton1.setText("1");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -174,34 +177,37 @@ public class AddNote extends javax.swing.JFrame {
                                 .addComponent(titleS))
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jRadioButton3)
-                                .addComponent(jRadioButton1)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
-                                    .addGap(117, 117, 117)
-                                    .addComponent(jRadioButton2))))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(impS, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jRadioButton1))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addGap(117, 117, 117)
+                                        .addComponent(jRadioButton2)))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 225, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addGap(89, 89, 89)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117)
                         .addComponent(day, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
                         .addComponent(month, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(33, 33, 33)
                         .addComponent(year, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(impS, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel4)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(title, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(244, 244, 244))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -222,19 +228,21 @@ public class AddNote extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(75, 75, 75)
                                 .addComponent(titleS)))
-                        .addGap(88, 88, 88)
+                        .addGap(87, 87, 87)
+                        .addComponent(jLabel4)
+                        .addGap(61, 61, 61)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(62, 62, 62)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jRadioButton1)
-                                    .addComponent(impS))
-                                .addGap(42, 42, 42))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jRadioButton2)))
+                                    .addGap(53, 53, 53))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jRadioButton2))))
+                            .addComponent(impS))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jRadioButton3)
                         .addGap(47, 47, 47)
@@ -279,22 +287,31 @@ public class AddNote extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (title.getText().isEmpty() == false && importance != 0 && !(deadline == null)&&!(deadline.equalsIgnoreCase(""))) {
-            if (year.getSelectedItem() == "2023" && Integer.parseInt((month.getSelectedItem()).toString()) < 6 ||
+        dayCh = day.getItemAt(day.getSelectedIndex());
+        monthCh= month.getItemAt(month.getSelectedIndex());
+        yearCh= year.getItemAt(year.getSelectedIndex());
+        deadline=dayCh+"."+monthCh+"."+yearCh;
+        if (title.getText().isEmpty() == false && importance != 0 && !(deadline == null)&&!(deadline.equalsIgnoreCase("")&&!((day.getSelectedItem()).equals("Ден")) &&!((month.getSelectedItem()).equals("Месец"))&&!((year.getSelectedItem()).equals("Година")))) {
+                   if (year.getSelectedItem() == "2023" && Integer.parseInt((month.getSelectedItem()).toString()) < 6 ||
                     month.getSelectedItem() == "6" && Integer.parseInt((day.getSelectedItem()).toString()) < 15 && year.getSelectedItem() == "2023") {
                 JOptionPane.showMessageDialog(null, "Задачи може да се задават само за бъдещето.", "Error", JOptionPane.ERROR_MESSAGE);
                 deadline="";
                 day.setSelectedItem("Ден");
                 month.setSelectedItem("Месец");
                 year.setSelectedItem("Година");
+                
                
-            } else {
+            }else if (((day.getSelectedItem()).equals("Ден")) ||((month.getSelectedItem()).equals("Месец"))||((year.getSelectedItem()).equals("Година"))){
+                JOptionPane.showMessageDialog(null, "Моля, изберете ден, месец и година.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+                   else {
                 Node newNote = new Node(getKey(), title.getText(), false, importance, deadline);
                 myMap.put(newNote);
                 this.setVisible(false);
                 new Menu().setVisible(true);
                 key++;
                 setKey(key);
+                      // System.out.println((day.getSelectedItem()).equals("Ден"));
             }
         } else {
             if (title.getText().isEmpty()) {
@@ -321,20 +338,18 @@ public class AddNote extends javax.swing.JFrame {
 
     private void dayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dayActionPerformed
         // TODO add your handling code here:
-        deadline = day.getItemAt(day.getSelectedIndex());
-        deadline += ".";
-
+       
     }//GEN-LAST:event_dayActionPerformed
 
     private void monthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_monthActionPerformed
         // TODO add your handling code here:
-        deadline += month.getItemAt(month.getSelectedIndex());
-        deadline += ".";
+       
+      
     }//GEN-LAST:event_monthActionPerformed
 
     private void yearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearActionPerformed
         // TODO add your handling code here:
-        deadline += year.getItemAt(year.getSelectedIndex());
+        
     }//GEN-LAST:event_yearActionPerformed
 
     /**
