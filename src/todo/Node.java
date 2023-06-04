@@ -103,6 +103,36 @@ public class Node {
         return key;
     }
     
+    public String nodeDone() {
+        String isdone;
+        if (getDone() == true) {
+            isdone = "Изпълнена";
+        } else {
+            isdone = "Неизпълнена";
+        }
+        return isdone;
+    }
+    
+      public String nodeTostring() {
+        String note = "";
+
+        
+                note += getValue();
+                note += "\n";
+                note = note + "Изпълненост: " + nodeDone();
+                note += "\n";
+                note = note + "Важност: " + getImp();
+                note += "\n";
+                note += "Срок: " + getDeadline();
+                note+="\n";
+                note+="--------------------------------------------------------------------------------------------------------------------------------------------------";
+
+        return note;
+
+    }
+
+    
+    
      Node (){
         this(0,"",false,0, "");
        
