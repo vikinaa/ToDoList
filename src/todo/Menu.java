@@ -38,13 +38,16 @@ public class Menu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         addNoteButton = new javax.swing.JButton();
         peekNotesButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
         jLabel1.setText("To-do list");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 44, -1, -1));
 
         addNoteButton.setBackground(new java.awt.Color(204, 204, 204));
         addNoteButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -55,6 +58,7 @@ public class Menu extends javax.swing.JFrame {
                 addNoteButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(addNoteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 201, 70));
 
         peekNotesButton.setBackground(new java.awt.Color(204, 204, 204));
         peekNotesButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -65,34 +69,10 @@ public class Menu extends javax.swing.JFrame {
                 peekNotesButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(peekNotesButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 201, 71));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(296, 296, 296)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(peekNotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(addNoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addComponent(jLabel1)))
-                .addContainerGap(317, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1)
-                .addGap(49, 49, 49)
-                .addComponent(addNoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(peekNotesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(81, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\vikto\\OneDrive\\Работен плот\\spiral-notebook-paper-texture3.jpg")); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 820, 480));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -167,6 +147,7 @@ public class Menu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addNoteButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton peekNotesButton;
     // End of variables declaration//GEN-END:variables
