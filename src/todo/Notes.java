@@ -4,31 +4,27 @@
  */
 package todo;
 
-
 import javax.swing.JOptionPane;
-
 
 /**
  *
  * @author vikto
  */
-public class Notes extends javax.swing.JFrame{
+public class Notes extends javax.swing.JFrame {
 
     /**
      * Creates new form Notes
      */
-    
-    static int note=0;
-    
+    static int note = 0;
+
     public Notes() {
         initComponents();
         this.setResizable(false);
         taskCounter.setText(String.valueOf(AddNote.myMap.size()));
         notesTextArea.setText(AddNote.myMap.sstring());
-       // notesTextArea.append(o.myMap.sstring());
+        // notesTextArea.append(o.myMap.sstring());
     }
-     
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,7 +66,7 @@ public class Notes extends javax.swing.JFrame{
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 600, 128, 32));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Срок", "Важност" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-", "Срок", "Важност", "Изпълненост" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -153,34 +149,39 @@ public class Notes extends javax.swing.JFrame{
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-       
-        if(!(noteCheck.getText()).equals("")){
-            if(Integer.parseInt(noteCheck.getText())>0 && Integer.parseInt(noteCheck.getText())<=AddNote.myMap.size()) {
-            note=Integer.parseInt(noteCheck.getText());
-            this.setVisible(false);
-            new noteDesc().setVisible(true);
-           
+
+        if (!(noteCheck.getText()).equals("")) {
+            if (Integer.parseInt(noteCheck.getText()) > 0 && Integer.parseInt(noteCheck.getText()) <= AddNote.myMap.size()) {
+                note = Integer.parseInt(noteCheck.getText());
+                this.setVisible(false);
+                new noteDesc().setVisible(true);
+
+            } else {
+                JOptionPane.showMessageDialog(null, "Невалиден номер на бележка.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Въведете номер на бележка.", "Error", JOptionPane.ERROR_MESSAGE);
         }
-            else JOptionPane.showMessageDialog(null,"Невалиден номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
-        }
-        else JOptionPane.showMessageDialog(null,"Въведете номер на бележка.","Error",JOptionPane.ERROR_MESSAGE);
-     
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        if(jComboBox1.getSelectedItem()=="Важност"){
+       
+        if (jComboBox1.getSelectedItem() == "Важност") {
             AddNote.myMap.sortByImp();
             notesTextArea.setText(AddNote.myMap.sstring());
         }
-        if(jComboBox1.getSelectedItem()=="Изпълненост"){
-            
+        if (jComboBox1.getSelectedItem() == "Срок") {
+            AddNote.myMap.sortByDate();
+            notesTextArea.setText(AddNote.myMap.sstring());
+           
         }
-        if(jComboBox1.getSelectedItem()=="Срок"){
-            
+        if (jComboBox1.getSelectedItem() == "Изпълненост") {
+
         }
 
-                
+
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
@@ -192,7 +193,7 @@ public class Notes extends javax.swing.JFrame{
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -214,7 +215,7 @@ public class Notes extends javax.swing.JFrame{
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Notes().setVisible(true);  
+                new Notes().setVisible(true);
             }
         });
     }
