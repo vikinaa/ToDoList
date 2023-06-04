@@ -4,16 +4,12 @@
  */
 package todo;
 
-
-
 /**
  *
  * @author vikto
  */
 public class Menu extends javax.swing.JFrame {
 
-    
-   
     /**
      * Creates new form NewJFrame
      */
@@ -21,9 +17,6 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
     }
-    
-    
-   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -93,11 +86,12 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addNoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNoteButtonActionPerformed
-        
+
         this.setVisible(false);
         new AddNote().setVisible(true);
         
-        
+
+
     }//GEN-LAST:event_addNoteButtonActionPerformed
 
     private void peekNotesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_peekNotesButtonActionPerformed
@@ -109,8 +103,7 @@ public class Menu extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-    
-       
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -138,7 +131,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 new Menu().setVisible(true);
             }
         });
