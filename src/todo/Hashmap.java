@@ -142,6 +142,19 @@ public class Hashmap implements Sorts {
 
     }
 
+       public String filterDone(Node a, String undone, int br){
+       if(a==null) return undone;
+        if(!(a.getDone())) {
+            undone+=br+". ";
+            undone+=a.nodeTostring();
+        }
+        undone+="\n";
+        return filterDone(a.next, undone, br++);
+       
+    }
+    
+    
+    
     public void swapValue(Node a, Node b) { //a>b
         int temp = a.getKey();
         int temp2 = b.getKey();
@@ -229,5 +242,8 @@ public class Hashmap implements Sorts {
         }
 
     }
+    
+   
 
+   
 }
