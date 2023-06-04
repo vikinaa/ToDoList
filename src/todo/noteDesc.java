@@ -44,7 +44,7 @@ public class noteDesc extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        doneB = new javax.swing.JToggleButton();
         jButton1 = new javax.swing.JButton();
         title = new javax.swing.JTextField();
         importance = new javax.swing.JTextField();
@@ -75,12 +75,13 @@ public class noteDesc extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Microsoft Sans Serif", 0, 14)); // NOI18N
         jLabel6.setText("Маркирай като изпълнена:");
 
-        jToggleButton1.setText("✓");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        doneB.setText("✓");
+        doneB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                doneBActionPerformed(evt);
             }
         });
+        if((AddNote.myMap).returnNode(Notes.note).getDone()) doneB.setEnabled(false);
 
         jButton1.setText("Назад");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,8 +150,7 @@ public class noteDesc extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(33, 33, 33)
-                                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                                .addComponent(doneB, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(106, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
@@ -192,7 +192,7 @@ public class noteDesc extends javax.swing.JFrame {
                         .addGap(35, 35, 35)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
-                            .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(doneB, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
@@ -218,12 +218,13 @@ public class noteDesc extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void doneBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doneBActionPerformed
         // TODO add your handling code here:
-        jToggleButton1.setBackground(Color.green);
+        
+        doneB.setBackground(Color.green);
         
         
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+    }//GEN-LAST:event_doneBActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -239,13 +240,16 @@ public class noteDesc extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dueDateActionPerformed
 
+   
+    
     private void saveChangesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveChangesActionPerformed
         // TODO add your handling code here:
         saveChanges.setBackground(Color.gray);
-        if(jToggleButton1.isSelected()){
+        if(doneB.isSelected()){
             checkNote.setDone(true);
         }
         checkNote.setValue(title.getText());
+        
         checkNote.setDeadline(dueDate.getText());
         if(Integer.parseInt(importance.getText())>0&&Integer.parseInt(importance.getText())<4){
         checkNote.setImp(Integer.parseInt(importance.getText()));
@@ -304,6 +308,7 @@ public class noteDesc extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField done;
+    private javax.swing.JToggleButton doneB;
     private javax.swing.JTextField dueDate;
     private javax.swing.JTextField importance;
     private javax.swing.JButton jButton1;
@@ -315,7 +320,6 @@ public class noteDesc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton saveChanges;
     private javax.swing.JTextField title;
     // End of variables declaration//GEN-END:variables
