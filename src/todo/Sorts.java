@@ -13,8 +13,8 @@ public interface Sorts {
     public abstract void sortByDate();
     
     public abstract void sortByImp();
-    
-    public abstract void sortByStatus();
+ 
+  
     
     
 }
