@@ -22,7 +22,7 @@ public class Notes extends javax.swing.JFrame {
         this.setResizable(false);
         taskCounter.setText(String.valueOf(AddNote.myMap.size()));
         notesTextArea.setText(AddNote.myMap.sstring());
-        // notesTextArea.append(o.myMap.sstring());
+        AddNote.myMap.unfinished();
     }
 
     /**
@@ -51,7 +51,6 @@ public class Notes extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 153));
-        setPreferredSize(new java.awt.Dimension(900, 700));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 204));
         jPanel1.setPreferredSize(new java.awt.Dimension(900, 700));
@@ -74,9 +73,9 @@ public class Notes extends javax.swing.JFrame {
         });
         jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, 125, -1));
 
-        jLabel1.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe Script", 1, 18)); // NOI18N
         jLabel1.setText("Сортирай по:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 490, 125, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(725, 490, 150, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setText("задачи");
@@ -86,7 +85,7 @@ public class Notes extends javax.swing.JFrame {
         taskCounter.setText("0");
         jPanel1.add(taskCounter, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 28, -1));
 
-        jLabel3.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe Script", 1, 24)); // NOI18N
         jLabel3.setText("Вашите задачи");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, 25));
 
@@ -99,7 +98,7 @@ public class Notes extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 619, 524));
 
-        jLabel4.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe Script", 1, 18)); // NOI18N
         jLabel4.setText("Редактирай:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 170, -1, -1));
 
@@ -193,7 +192,7 @@ public class Notes extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void runMainNotes() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -4,6 +4,8 @@
  */
 package todo;
 
+import java.util.LinkedList;
+
 public class Hashmap implements Sorts {
 
     Node head = new Node();
@@ -242,6 +244,21 @@ public class Hashmap implements Sorts {
         }
 
     }
+    
+    public void unfinished(){
+        LinkedList<Node> list=new LinkedList<>();
+        Node curr=head.next;
+        while(curr!=null){
+            list.add(new Node(curr.getKey(), curr.getValue(), curr.getDone(), curr.getImp(), curr.getDeadline()));
+            curr=curr.next;
+        }
+         
+          list.stream()
+                  .filter(x -> x.getDone()==true)
+                  .forEach(System.out::println);
+
+
+      }
     
    
 

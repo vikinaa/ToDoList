@@ -92,13 +92,13 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Sans Serif" size="18" style="1"/>
+              <Font name="Segoe Script" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x421;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x430;&#x439; &#x43f;&#x43e;:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="750" y="490" width="125" height="-1"/>
+              <AbsoluteConstraints x="725" y="490" width="150" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -131,7 +131,7 @@
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Sans Serif" size="24" style="1"/>
+              <Font name="Segoe Script" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x412;&#x430;&#x448;&#x438;&#x442;&#x435; &#x437;&#x430;&#x434;&#x430;&#x447;&#x438;"/>
           </Properties>
@@ -167,7 +167,7 @@
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Sans Serif" size="18" style="1"/>
+              <Font name="Segoe Script" size="18" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x420;&#x435;&#x434;&#x430;&#x43a;&#x442;&#x438;&#x440;&#x430;&#x439;:"/>
           </Properties>
