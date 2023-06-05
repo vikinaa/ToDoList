@@ -151,7 +151,7 @@ public class Hashmap implements Sorts {
             undone+=a.nodeTostring();
         }
         undone+="\n";
-        return filterDone(a.next, undone, br++);
+        return filterDone(a.next, undone, ++br);
        
     }
     
